@@ -46,11 +46,13 @@ def eliminate_adjacent():
 					neighboors += game.board[index_y + 1][index_x + 1] # SE
 				if index_x != 0:
 					neighboors += game.board[index_y + 1][index_x - 1] # SW
-
-			if neighboors == 3 or neighboors == 2:
-				board_copy[index_y][index_x] = 1
-			else:
-				board_copy[index_y][index_x] = 0
+					
+			if x == 0:			
+				if neighboors == 3 or neighboors == 2:
+					board_copy[index_y][index_x] = 1
+			elif x == 1:
+				if neighboors != 2:
+					board_copy[index_y][index_x] = 0
 			
 	game.board = board_copy
 
