@@ -47,13 +47,11 @@ def eliminate_adjacent():
 				if index_x != 0:
 					neighboors += game.board[index_y + 1][index_x - 1] # SW
 
-			if neighboors < 2:
-				board_copy[index_y][index_x] = 0
-			elif neighboors == 3:
+			if neighboors == 3 or neighboors == 2:
 				board_copy[index_y][index_x] = 1
-			elif neighboors > 3:
+			else:
 				board_copy[index_y][index_x] = 0
-
+			
 	game.board = board_copy
 
 # Used for the restart too; 1 means a live cell, 0, a dead one

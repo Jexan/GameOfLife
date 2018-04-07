@@ -5,10 +5,11 @@ window_height = 300
 info_width = 100
 window_width = window_height + info_width
 grid_count = 20
-tile_size = window_height/grid_count
+tile_size = window_height//grid_count
+cells_multipliers = 3
 
 #Relevant game variables
-random_cells = grid_count*(tile_size/10)*4
+random_cells = grid_count*(tile_size//10)*cells_multipliers
 generation = 0
 pause = False
 board = []
